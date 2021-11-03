@@ -1,6 +1,6 @@
 import pytest
 
-from creadit_account import CreditAccount
+from credit_account import CreditAccount
 
 def test_comparation():
     credit_account_1 = CreditAccount("Lukas Novak")
