@@ -12,3 +12,10 @@ __sub__ # chování -
 ```
 
 Všechny operace jsou implementovány pouze s instancemi třídy `CreditAccount`, jinak vrací `NotImplemented`.
+
+## Lokální testování
+Funkčnost řešení ověříte následujícím příkazem:
+
+```bash
+pytest tests.py
+```

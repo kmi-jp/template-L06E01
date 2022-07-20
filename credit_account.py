@@ -12,7 +12,7 @@ class CreditAccount:
         self.owner = owner
         self._balance = 0
         self.balance = initial_credits
-    
+
     @classmethod
     def from_csv(cls, input_string, separator=","):
         """Creates CreditAccount class from csv string"""
@@ -31,11 +31,11 @@ class CreditAccount:
         Returns: money value
         """
         return credit * exchange_rate
-    
+
     @property
     def balance(self):
         return self._balance
-    
+
     @balance.setter
     def balance(self, new_balance):
         """Sets new value of balance, new value cannot be negative."""
@@ -48,45 +48,45 @@ class CreditAccount:
     @balance.deleter
     def balance(self):
         self._balance = 0
-    
+
     def __repr__(self):
         return f"CreditAccount({self.owner}, {self.balance})"
-    
+
     def __str__(self):
         return self.__repr__()
-    
+
     def __bool__(self):
         return bool(self.balance)
-    
+
     def __int__(self):
         return int(self.balance)
-    
+
     def __lt__(self, other):
         if type(other) == CreditAccount:
             return self.balance < other.balance
 
         return NotImplemented
-    
+
     def __add__(self, other):
         if type(other) == CreditAccount:
             return self.balance + other.balance
 
         return NotImplemented
-    
+
     def __iadd__(self, value):
         if type(value) == int:
             self.balance += value
             return self
-        
+
         return NotImplemented
-    
+
     def __isub__(self, value):
         if type(value) == int:
             self.balance -= value
             return self
-        
+
         return NotImplemented
-    
+
     def transfer_to(self, other, value):
         """Transfer credit into another credit account. Negative balance is allowed.
 
