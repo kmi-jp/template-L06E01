@@ -43,3 +43,11 @@ def test_balance_operations():
 
     assert credit_account_1 + credit_account_2 == 250
     assert credit_account_1 - credit_account_2 == -150
+
+
+def test_docstrings():
+    assert CreditAccount.__doc__ is not None
+    assert CreditAccount.from_csv.__doc__ is not None
+    assert CreditAccount.credit_to_money.__doc__ is not None
+    assert CreditAccount.balance.__doc__ is not None
+    assert CreditAccount.transfer_to.__doc__ is not None
